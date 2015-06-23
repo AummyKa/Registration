@@ -1,0 +1,42 @@
+
+<?php include 'connect_database.php';?>
+<script src="validate.js"></script>
+
+<form id='register' action='connect_database.php' onsubmit="return validateForm()" method='post' accept-charset='UTF-8'>
+
+	<fieldset >
+		<legend>Register</legend>
+			<input type='hidden' name='submitted' id='submitted' value='1'/></br>
+				
+				<label for='name' >First Name: </label>
+				<input type='text' name='name' id='name' maxlength="50" /></br></br>
+
+				<label for='lastname' >Last Name: </label>
+				<input type='text' name='lastname' id='lastname' maxlength="50" /></br></br>
+ 				
+ 				<label for='username' >UserName:</label>
+				<input type='text' name='username' id='username' maxlength="50" /></br></br>
+	
+				<label for='password' >Password :</label>
+				<input type='password' name='password' id='password' maxlength="50" /></br></br>
+
+				<label for='Sex' >Sex :</label>
+					<input type="radio" name="sex" value="Male"> Male 
+					<input type="radio" name="sex" value="Female"> Female 
+				</br></br>
+
+				<label for='Birthday' >Birthday :</label>
+				<input type="date" name="date_of_birth"></br></br>
+
+				<label for='Interest' >Interest :</label>
+					<input type="checkbox" name="interest[]" value="Games">Games
+					<input type="checkbox" name="interest[]" value="Sport">Sport
+					<input type="checkbox" name="interest[]" value="Music">Music 
+				</br></br>
+														
+				<input type='submit' name='Submit' value='Submit'/>
+				
+ 
+	</fieldset>
+
+</form>
