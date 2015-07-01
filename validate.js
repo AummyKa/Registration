@@ -1,25 +1,29 @@
-<script>
 
 function validateForm() {
 
-    var name = document.forms["register"]["name"].value;
-    var lastname = document.forms["register"]["lastname"].value;
-    var username = document.forms["register"]["username"].value;
-    var password = document.forms["register"]["password"].value;
-    var b_date = document.forms["register"]["date_of_birth"].value;
-    var itr = document.getElementsByName('interest[]');
+    var name = document.forms["content"]["name"].value;
+    var lastname = document.forms["content"]["lastname"].value;
+    var username = document.forms["content"]["username"].value;
+    var password = document.forms["content"]["password"].value;
+    var sex = document.forms["content"]["sex"].value;
+    var b_date = document.forms["content"]["date_of_birth"].value;
+    
+    var itr = document.getElementsByName("interest[]");
 	
 	var check_var = false;
     var msg = '';
 	var unchecked_count =0;
 
+
 	for (var i = 0; i < itr.length; i++)
 	{
-		if (itr[i].checked){ break;
-		} else unchecked_count++;
+		if (itr[i].checked){
+         break;
+		} 
+        else unchecked_count++;
 	}
 	
-		if(count==itr.length){
+		if(unchecked_count==itr.length){
 			msg +="\n Please choose of one of your interest";
 			check_var = true;
 		}  
@@ -44,8 +48,12 @@ function validateForm() {
          msg +="\n Date is invalid";
         check_var = true;
     }
+    if (sex == null || sex == "") {
+         msg +="\n sex must be filled out";
+        check_var = true;
+    }
   
-      
+    
 	  
     if(check_var)
     {
@@ -58,4 +66,3 @@ function validateForm() {
     }
     
 }
-</script>
