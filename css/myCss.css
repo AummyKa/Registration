@@ -1,5 +1,9 @@
+.body{
+	padding-bottom: 50px;
+}
+
 #content{
-				
+				font-family: "Comic Sans MS", cursive, sans-serif;
 				text-align: center;
 				margin-top:1%;
 	}
@@ -35,9 +39,22 @@
 				
 				
 				padding: 0.5em 0;
-				text-align: center;}
+				text-align: center;
+
+			}
+
+.nav_bar{
+     background-color: #DBE0DA;
+}
+
 
 h{
 	
 	font-family: "Comic Sans MS", cursive, sans-serif;
 }
+
+h1{
+	font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+

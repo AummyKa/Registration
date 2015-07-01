@@ -27,8 +27,8 @@
     <!-- <link rel="stylesheet" type="text/css" href="datepicker/css/bootstrap-responsive.css">
  -->
     <!-- Loading Flat UI -->
-    <!--<link href="css/flat-ui.css" rel="stylesheet">-->
-
+    <!--  <link href="css/flat-ui.css" rel="stylesheet"> 
+ -->
     <link rel="shortcut icon" href="images/favicon.ico">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
@@ -47,11 +47,24 @@
    	
    	
 	
-	
+	<nav class="navbar navbar-default" style = "background-color : #C5C2C2">
+		<!--  <div class="container-fluid">
+		    <div class="navbar-header">
+		      <a class="navbar-brand" href="#">
+		        <img alt="Brand" src="...">
+		      </a>
+		    </div>
+		  </div> -->
+
+	 	<ul class="nav navbar-nav"  >
+	 	 	<a class="navbar-brand" style="color:#ffffff">Project X</a>
+	 	 	<p class="navbar-text">by Aummyka</p>
+       	 	<li ><a href="data_table.php">List Of Users <span class="sr-only">(current)</span></a></li> 
+	</nav>
 	<form id='content' action='data_table.php' onsubmit="return validateForm()" method='post' accept-charset='UTF-8'>
 
 	<fieldset >
-		<h font-size = '40px'><legend>Register</legend><h>
+			<h1>Register</h1>
 			<input type='hidden' name='submitted' id='submitted' value='1'/></br>
 				
 				<h><label for='name' >First Name: </label></h>
@@ -83,7 +96,7 @@
 				<input type='submit' name='Submit' value='Submit'/>
 	 	</fieldset>
 	</form>
-
+	</div>
 
 
 

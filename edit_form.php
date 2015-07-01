@@ -7,14 +7,13 @@
 
 		$con = connect_db();
 		$table = "user";
-		$id = $_GET['id'];
+		
 		// data insert code starts here.
 
-		if(isset($id))
+		if(isset($_GET['id']))
+		
 		{
-
-
-
+		 $id = $_GET['id'];
 		 $sql = $con->prepare("SELECT * FROM user WHERE id = ?");
 		 $sql->bindValue(1, $id);
 		 $sql->execute();
@@ -23,9 +22,9 @@
 		//print_r($result);die();
 		}
 		// data update code starts here.
-		if(isset($_POST['btn-update']))
+		if(isset($_REQUEST['btn-update']))
 		{
-		 $id=$_GET["id"];
+		 $id=$_REQUEST["id"];
 		 //echo 'id==='.$id; exit();
 		 $conn = connect_db();
 
@@ -53,13 +52,14 @@
 				":sex" =>$_POST["sex"],
 				":b_date" =>$_POST["date_of_birth"],
 				":interest" => implode(",",$_POST["interest"]),
-				":id" =>$_GET["id"]
+				":id" =>$id
 				));
 		 
 		 if($q)
 		 {
 		  ?>
 		  <script>
+
 		  alert('Record updated...');
 		        window.location='data_table.php'
 		        </script>
@@ -120,13 +120,28 @@
 		
 		 
 
-		 <div id="content">
-				
+		 
+	<nav class="navbar navbar-default" style = "background-color : #C5C2C2">
+		<!--  <div class="container-fluid">
+		    <div class="navbar-header">
+		      <a class="navbar-brand" href="#">
+		        <img alt="Brand" src="...">
+		      </a>
+		    </div>
+		  </div> -->
+
+	 	<ul class="nav navbar-nav"  >
+	 	 	<a class="navbar-brand" style="color:#ffffff">Project X</a>
+	 	 	<p class="navbar-text">by Aummyka</p>
+       	 	<li ><a href="data_table.php">List Of Users <span class="sr-only">(current)</span></a></li> 
+	</nav>
+			
 		<form id='content' onsubmit = "return validateForm()" action="edit_form.php" method='post' accept-charset='UTF-8'>   
 		    
 		    <fieldset >
-				<h font-size = '40px'><legend>Register</legend></h>
+				<h1>Edit Form</h1>
 			<input type='hidden' name='submitted' id='submitted' value='1'/></h></br>
+			<input type='hidden' name='id' id='id' value='<?php echo $id; ?>'/></h></br>
 				
 				<h><label for='name' >First Name: </label></h>
 				<input type='text' name='name' id='name' maxlength="50" value= "<?php echo $result[0]['name']; ?>" /></h></br></br>
@@ -172,7 +187,7 @@
 		</fieldset>
 	</form>
 		    </table>
-	</div>
+
 		    
 		<!-- Load JS here for greater good =============================-->
    	
@@ -181,7 +196,7 @@
     <script src="js/jquery.ui.touch-punch.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/bootstrap-select.js"></script>
-    <script src="js/bootstrap-switch.js"></script>
+    <!--<script src="js/bootstrap-switch.js"></script>-->
     <script src="js/flatui-checkbox.js"></script>
     <script src="js/flatui-radio.js"></script>
     <script src="js/jquery.tagsinput.js"></script>

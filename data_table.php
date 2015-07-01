@@ -42,7 +42,9 @@
 	<body>
 
 	<div class="container">
-  		<h3>List</h2>
+  		<h3>List</h3>
+  		<button type="button" class="btn btn-primary" onclick="window.location.href='register_page.html'" margin-bottom: "100cm" >Add New User</button>
+
 
 
 <?php
@@ -83,7 +85,7 @@
 					<td>' . $val['sex'].'</td>
 					<td>' . $val['date_of_birth'].'</td>
 					<td>' . $val['interest'].'</td>
-					<td><a href="update-form.php?action=delete&id=' . $val['id'] . '">Delete</a></td>>
+					<td><a href="data_table.php?action=delete&id=' . $val['id'] . '">Delete</a></td>>
 					<td><a href="edit_form.php?action=edit&id=' . $val['id'] . '">Edit</a></td>>
 					
 
@@ -142,8 +144,7 @@
 
 ?>
 	
-	<button type="button" class="btn btn-primary" onclick="window.location.href='register_page.html'" >Add New User</button>
-
+	
  <!-- Load JS here for greater good =============================-->
    	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
   	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
